@@ -1,0 +1,30 @@
+/* 1. Necessary Tailwind Directives */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* 2. Reset the centering that breaks layouts in default Vite templates */
+:root {
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+  color-scheme: light dark;
+  background-color: #f8fafc;
+}
+
+body {
+  margin: 0;
+  /* REMOVE: display: flex; place-items: center; */
+  /* This centering is what makes your dashboard look like a tiny column */
+  min-width: 320px;
+  min-height: 100vh;
+}
+
+#root {
+  width: 100%;
+}
+
+/* 3. Global transitions for inputs */
+input, select {
+  transition: all 0.2s ease-in-out;
+}

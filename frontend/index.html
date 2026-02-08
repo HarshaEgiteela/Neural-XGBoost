@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>N-XGB Disaster Dashboard</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Inter', sans-serif; background-color: #f8fafc; }
+        .glass-panel { backdrop-filter: blur(10px); background: rgba(255, 255, 255, 0.8); }
+    </style>
+</head>
+<body class="min-h-screen p-4 md:p-10">
+    <div class="max-w-6xl mx-auto">
+        <!-- Header -->
+        <header class="mb-12 flex flex-col md:flex-row justify-between items-start md:items-center gap-6">
+            <div>
+                <div class="flex items-center gap-3 mb-2">
+                    <div class="bg-blue-600 p-2 rounded-xl shadow-lg shadow-blue-500/30">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline></svg>
+                    </div>
+                    <h1 class="text-4xl font-black text-slate-900 tracking-tight">N-XGB <span class="text-blue-600">Sentinel</span></h1>
+                </div>
+                <p class="text-slate-500 font-semibold text-lg">Hybrid Neural-XGBoost Framework • <span class="text-blue-600">97.22% Precision</span></p>
+            </div>
+            <div class="flex items-center gap-3 px-5 py-2.5 rounded-full bg-white border border-slate-200 shadow-sm text-sm font-bold text-slate-600">
+                <span class="relative flex h-2.5 w-2.5">
+                    <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
+                    <span class="relative inline-flex rounded-full h-2.5 w-2.5 bg-green-500"></span>
+                </span>
+                Neural Extractor: ACTIVE
+            </div>
+        </header>
+
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-10">
+            <!-- Form Section -->
+            <div class="lg:col-span-7 bg-white border border-slate-200 rounded-[2.5rem] p-8 shadow-xl shadow-slate-200/50">
+                <div class="flex items-center gap-3 mb-10 border-b border-slate-100 pb-5">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#3b82f6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12.22 2h-.44a2 2 0 0 0-2 2v.18a2 2 0 0 1-1 1.73l-.43.25a2 2 0 0 1-2 0l-.15-.08a2 2 0 0 0-2.73.73l-.22.38a2 2 0 0 0 .73 2.73l.15.1a2 2 0 0 1 1 1.72v.51a2 2 0 0 1-1 1.74l-.15.09a2 2 0 0 0-.73 2.73l.22.38a2 2 0 0 0 2.73.73l.15-.08a2 2 0 0 1 2 0l.43.25a2 2 0 0 1 1 1.73V20a2 2 0 0 0 2 2h.44a2 2 0 0 0 2-2v-.18a2 2 0 0 1 1-1.73l.43-.25a2 2 0 0 1 2 0l.15.08a2 2 0 0 0 2.73-.73l.22-.39a2 2 0 0 0-.73-2.73l-.15-.08a2 2 0 0 1-1-1.74v-.5a2 2 0 0 1 1-1.74l.15-.09a2 2 0 0 0 .73-2.73l-.22-.38a2 2 0 0 0-2.73-.73l-.15.08a2 2 0 0 1-2 0l-.43-.25a2 2 0 0 1-1-1.73V4a2 2 0 0 0-2-2z"></path><circle cx="12" cy="12" r="3"></circle></svg>
+                    <h2 class="text-lg font-bold text-slate-800 uppercase tracking-widest">Incident Parameters</h2>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
+                    <div class="space-y-4 text-left">
+                        <label class="block text-[11px] font-black text-slate-400 uppercase tracking-widest">Geography</label>
+                        <input type="text" placeholder="Country" class="w-full bg-slate-50 border-2 border-slate-100 rounded-2xl p-4 focus:border-blue-500 outline-none font-bold">
+                        <div class="grid grid-cols-2 gap-4">
+                            <input type="number" placeholder="Lat" class="w-full bg-slate-50 border-2 border-slate-100 rounded-2xl p-4 font-bold outline-none">
+                            <input type="number" placeholder="Lon" class="w-full bg-slate-50 border-2 border-slate-100 rounded-2xl p-4 font-bold outline-none">
+                        </div>
+                    </div>
+                    <div class="space-y-4 text-left">
+                        <label class="block text-[11px] font-black text-slate-400 uppercase tracking-widest">Intensity</label>
+                        <input type="number" placeholder="Magnitude" class="w-full bg-slate-50 border-2 border-slate-100 rounded-2xl p-4 focus:border-blue-500 outline-none font-bold">
+                        <input type="number" placeholder="Total Affected" class="w-full bg-slate-50 border-2 border-slate-100 rounded-2xl p-4 font-bold outline-none">
+                    </div>
+                </div>
+
+                <div class="bg-blue-50/50 p-6 rounded-3xl border-2 border-blue-100/50 mb-8">
+                    <label class="block text-[11px] font-black text-blue-400 uppercase tracking-widest mb-4">Temporal Dimension</label>
+                    <div class="grid grid-cols-3 gap-4">
+                        <input type="number" placeholder="Year" class="w-full bg-white border-2 border-slate-100 rounded-xl p-3 text-center font-black">
+                        <input type="number" placeholder="Month" class="w-full bg-white border-2 border-slate-100 rounded-xl p-3 text-center font-black">
+                        <input type="number" placeholder="Day" class="w-full bg-white border-2 border-slate-100 rounded-xl p-3 text-center font-black">
+                    </div>
+                </div>
+
+                <button class="w-full bg-blue-600 hover:bg-blue-700 text-white py-5 rounded-3xl font-black text-xl shadow-xl shadow-blue-200 transition-all">
+                    EXECUTE PREDICTION
+                </button>
+            </div>
+
+            <!-- Result Section -->
+            <div class="lg:col-span-5 bg-white border border-slate-200 rounded-[2.5rem] p-10 shadow-xl shadow-slate-200/50 flex flex-col justify-center items-center text-center relative overflow-hidden">
+                <div class="relative z-10">
+                    <div class="mb-6">
+                        <span class="text-xs font-black tracking-[0.3em] text-blue-600 uppercase">Analysis Outcome</span>
+                        <h2 class="text-6xl font-black text-slate-900 tracking-tighter">Earthquake</h2>
+                    </div>
+                    <div class="px-6 py-2 bg-orange-50 text-orange-600 border-2 border-orange-100 rounded-2xl text-xs font-black uppercase tracking-widest mb-10 inline-block">
+                        High Risk Level
+                    </div>
+                    
+                    <div class="w-full space-y-4 text-left">
+                        <div class="flex justify-between items-end">
+                            <span class="text-xs font-black text-slate-400 uppercase tracking-widest">Confidence</span>
+                            <span class="text-2xl font-black text-blue-600">98.4%</span>
+                        </div>
+                        <div class="h-3 w-full bg-slate-100 rounded-full overflow-hidden">
+                            <div class="h-full bg-blue-600 w-[98%] shadow-lg shadow-blue-500/50"></div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Background Icon -->
+                <div class="absolute -bottom-10 -right-10 opacity-[0.03] pointer-events-none">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="300" height="300" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline></svg>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
